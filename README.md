@@ -26,4 +26,31 @@ A fault-tolerant, scalable, and production-grade email delivery service built wi
 ---
 
 ## 📂 Project Structure
+resilient-email-service/
+├── src/
+│ └── EmailService.ts # Core logic
+├── tests/
+│ └── EmailService.test.ts # Unit tests
+├── package.json
+├── tsconfig.json
+└── jest.config.js
+📌 Usage Example
+You can use the EmailService class by providing one or more email providers and calling the send() method:
+
+ts
+Copy
+Edit
+const email: Email = {
+  to: "user@example.com",
+  subject: "Welcome",
+  body: "Thanks for signing up!",
+  idempotencyKey: "unique-key-123"
+};
+
+const service = new EmailService([new MockProviderA(), new MockProviderB()]);
+const result = await service.send(email);
+console.log(result);
+🙌 Acknowledgments
+Built with 💙 by Himani Bisen
+For learning, growth, and contributions to open-source engineering.
 
